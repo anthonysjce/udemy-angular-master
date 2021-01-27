@@ -5,6 +5,8 @@
     background-color: white;
     text-align: center;
 }
-host{
+:host{
     border: 1px solid lightgray;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
