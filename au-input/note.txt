@@ -1,0 +1,14 @@
+1) go to https://github.com/angular-university 
+2) go to angular-advanced-course project and clone the project 
+3) check out the au-input branch first  
+  git checkout -b au-input origin/au-input 
+4) install angular cli if not installed ---- npm install -g @angular/cli 
+5) install yarn ---- npm install -g yarn 
+
+6) go to au-input folder (**make sure you are in au-input folder where we have pakage.json )
+7) run yarn (this like npm install  will install all packages )
+ 8) now run npm start 
+
+To Use font awesome Icons 
+add this in index.html 
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
