@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "au-input": {
+    "au-tab-panel": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -48,18 +48,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "au-input:build"
+            "browserTarget": "au-tab-panel:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "au-input:build:production"
+              "browserTarget": "au-tab-panel:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "au-input:build"
+            "browserTarget": "au-tab-panel:build"
           }
         },
         "test": {
@@ -91,7 +91,7 @@
         }
       }
     },
-    "au-input-e2e": {
+    "au-tab-panel-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -100,7 +100,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "au-input:serve"
+            "devServerTarget": "au-tab-panel:serve"
           }
         },
         "lint": {
@@ -115,7 +115,7 @@
       }
     }
   },
-  "defaultProject": "au-input",
+  "defaultProject": "au-tab-panel",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "",

@@ -1,6 +1,6 @@
 {
-  "name": "au-input",
-  "version": "8.0.2",
+  "name": "au-tab-panel",
+  "version": "0.1.4",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -11,6 +11,7 @@
     "e2e": "ng e2e"
   },
   "private": false,
+
   "dependencies": {
     "@angular/animations": "8.0.0",
     "@angular/common": "8.0.0",
