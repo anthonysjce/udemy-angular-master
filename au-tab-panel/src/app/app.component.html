@@ -4,8 +4,12 @@
 
 
 <div class="container">
-    <au-tab-panel>
-        <au-tab title="Login">
+    <ng-template #headerButtons>
+        <button (click)="tabpanel.selectTab(login)">Login</button>
+        <button (click)="tabpanel.selectTab(signup)">Signup</button>
+    </ng-template>
+    <au-tab-panel #tabpanel [headerTemplate]="headerButtons">
+        <au-tab title="Login" #login>
             <form>
                 <div class="form-field">
                     <label>Email:</label><input>
@@ -15,7 +19,7 @@
                 </div>
             </form>
         </au-tab>
-        <au-tab title="Sign Up">
+        <au-tab title="Sign Up" #signup>
             <form>
                 <div class="form-field">
                     <label>Email:</label><input>

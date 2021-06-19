@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewInit, Component, ContentChildren, OnInit, QueryList, TemplateRef, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChildren, Input, OnInit, QueryList, TemplateRef, ViewChild } from '@angular/core';
 import { AuTabComponent } from 'app/au-tab/au-tab.component';
 
 @Component({
@@ -6,12 +6,14 @@ import { AuTabComponent } from 'app/au-tab/au-tab.component';
   templateUrl: './au-tab-panel.component.html',
   styleUrls: ['../tab-panel.component.scss']
 })
-export class AuTabPanelComponent implements OnInit, AfterContentInit,AfterViewInit {
+export class AuTabPanelComponent implements OnInit, AfterContentInit {
 
   @ContentChildren(AuTabComponent)
   tabs:QueryList<AuTabComponent>;
 
-  @ViewChild(TemplateRef,{static: false})
+ /*  @ViewChild(TemplateRef,{static: false})
+  headerTemplate: TemplateRef<any>; */
+  @Input()
   headerTemplate: TemplateRef<any>;
 
   constructor() {    
@@ -20,9 +22,9 @@ export class AuTabPanelComponent implements OnInit, AfterContentInit,AfterViewIn
 
   ngOnInit() {
   }
-  ngAfterViewInit(){    
+ /*  ngAfterViewInit(){   //used for studying @ViewChild 
     console.log(this.headerTemplate.elementRef); 
-  }
+  } */
   ngAfterContentInit(){
     //console.log(this.tabs);
     const selectedTab = this.tabs.find(tab => tab.selected);
