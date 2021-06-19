@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChildren, OnInit, QueryList } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChildren, OnInit, QueryList, TemplateRef, ViewChild } from '@angular/core';
 import { AuTabComponent } from 'app/au-tab/au-tab.component';
 
 @Component({
@@ -6,16 +6,22 @@ import { AuTabComponent } from 'app/au-tab/au-tab.component';
   templateUrl: './au-tab-panel.component.html',
   styleUrls: ['../tab-panel.component.scss']
 })
-export class AuTabPanelComponent implements OnInit, AfterContentInit {
+export class AuTabPanelComponent implements OnInit, AfterContentInit,AfterViewInit {
 
   @ContentChildren(AuTabComponent)
   tabs:QueryList<AuTabComponent>;
+
+  @ViewChild(TemplateRef,{static: false})
+  headerTemplate: TemplateRef<any>;
 
   constructor() {    
 
    }
 
   ngOnInit() {
+  }
+  ngAfterViewInit(){    
+    console.log(this.headerTemplate.elementRef); 
   }
   ngAfterContentInit(){
     //console.log(this.tabs);

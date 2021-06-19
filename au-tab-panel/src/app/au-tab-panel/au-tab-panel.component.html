@@ -4,7 +4,5 @@
         (click)="selectTab(tab)" [ngClass]="{selected:tab.selected}">{{tab.title}}</li>    
     </ul>
 </ng-template>
-<!-- <ng-container *ngTemplateOutlet="defaultTabHeader; context: tabs" ></ng-container> --> 
-<!-- will not work if you use let-tabs in ng-template <ng-template #defaultTabHeader let-tabs="tabs"> -->
 <ng-container *ngTemplateOutlet="defaultTabHeader; context: tabsContext" ></ng-container>
 <ng-content></ng-content>
