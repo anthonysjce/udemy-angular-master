@@ -1,10 +1,17 @@
 @import '../theme.scss';
 
-:host {
+/* :host {
     border-right: $tab-border;
     border-left: $tab-border;
     border-bottom: $tab-border;
     padding: 15px 25px;
     display: block;
 }
-
+ */
+ .tab {
+    border-right: $tab-border;
+    border-left: $tab-border;
+    border-bottom: $tab-border;
+    padding: 15px 25px;
+    display: block;
+}

@@ -11,12 +11,23 @@ export class AuTabPanelComponent implements OnInit, AfterContentInit {
   @ContentChildren(AuTabComponent)
   tabs:QueryList<AuTabComponent>;
 
-  constructor() { }
+  constructor() {    
+
+   }
 
   ngOnInit() {
   }
   ngAfterContentInit(){
-    console.log(this.tabs);
+    //console.log(this.tabs);
+    const selectedTab = this.tabs.find(tab => tab.selected);
+    
+    if(!selectedTab) {
+      this.tabs.first.selected = true;
+    }
+  }
+  selectTab(tab: AuTabComponent){
+    this.tabs.forEach(tab => tab.selected = false);
+    tab.selected = true;
   }
 
 }
