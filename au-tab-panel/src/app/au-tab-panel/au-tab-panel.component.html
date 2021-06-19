@@ -1,8 +1,10 @@
-<ul class="tab-panel-buttons">
-    <li *ngFor="let tab of tabs"
-    (click)="selectTab(tab)" [ngClass]="{selected:tab.selected}">{{tab.title}}</li>
-    <!-- <li class="selected">Login</li>
-    <li>Sign Up</li>
-    <li>Contact</li> -->
-</ul>
+<ng-template #defaultTabHeader>
+    <ul class="tab-panel-buttons">
+        <li *ngFor="let tab of tabs"
+        (click)="selectTab(tab)" [ngClass]="{selected:tab.selected}">{{tab.title}}</li>    
+    </ul>
+</ng-template>
+<!-- <ng-container *ngTemplateOutlet="defaultTabHeader; context: tabs" ></ng-container> --> 
+<!-- will not work if you use let-tabs in ng-template <ng-template #defaultTabHeader let-tabs="tabs"> -->
+<ng-container *ngTemplateOutlet="defaultTabHeader; context: tabsContext" ></ng-container>
 <ng-content></ng-content>
