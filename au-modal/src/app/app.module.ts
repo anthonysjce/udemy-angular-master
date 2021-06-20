@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
 
+import { AppComponent } from './app.component';
+import {AuInputModule} from 'au-input';
+import {AuTabPanelModule} from "au-tab-panel";
+import {AuModalModule} from "./au-modal/au-modal.module";
 import {HttpClientModule} from "@angular/common/http";
-import { AuFaInputComponent } from './lib/au-fa-input/au-fa-input.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AuFaInputComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuInputModule,
+    AuTabPanelModule,
+    AuModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

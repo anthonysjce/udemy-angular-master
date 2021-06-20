@@ -1,5 +1,5 @@
 {
-  "name": "au-input",
+  "name": "au-modal",
   "version": "8.0.2",
   "license": "MIT",
   "scripts": {
@@ -12,6 +12,8 @@
   },
   "private": false,
   "dependencies": {
+    "au-input": "^8.0.2",
+    "au-tab-panel": "^8.0.2",
     "@angular/animations": "8.0.0",
     "@angular/common": "8.0.0",
     "@angular/compiler": "8.0.0",
