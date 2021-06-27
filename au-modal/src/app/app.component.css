@@ -1,4 +1,4 @@
-@import "au-modal/au-modal.component.scss";
+
 
 .container {
     margin: 0 auto;
@@ -6,7 +6,9 @@
     padding-top: 65px;
 }
 
-
+::ng-deep .au-modal .modal-body{
+    min-width: 300px;
+}
 
 label {
     width: 100px;
