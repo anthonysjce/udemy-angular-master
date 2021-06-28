@@ -54,10 +54,9 @@
                 </au-tab>
             </au-tab-panel>
         </ng-template>
-        <au-modal class="au-modal" [body]="authModelBody">
-            
-        </au-modal>
-
+        <ng-template [auModalOpenOnClick]="[loginButton,signUpButton]">
+            <au-modal class="au-modal" [body]="authModelBody"></au-modal>
+        </ng-template>
         <div class="modal-buttons">
             <button #loginButton (click)="setLoginActive(true)">Login</button>
 
