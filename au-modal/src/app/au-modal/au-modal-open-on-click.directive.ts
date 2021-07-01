@@ -1,4 +1,5 @@
 import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+import { AuModalService } from './modal.service';
 
 @Directive({
   selector: '[auModalOpenOnClick]'
@@ -6,8 +7,9 @@ import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
 export class AuModalOpenOnClickDirective {
 
   constructor(private templateRef:TemplateRef<any>,
-    private viewContainer: ViewContainerRef) { 
-
+    private viewContainer: ViewContainerRef,
+    private modalService: AuModalService) { 
+      this.modalService.$close.subscribe(() => this.viewContainer.clear())
     }
 
     @Input()
