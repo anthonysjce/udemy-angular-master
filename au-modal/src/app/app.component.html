@@ -18,7 +18,7 @@
         <h1>Modal Examples</h1>
         <ng-template #authModelBody>
             <au-tab-panel>
-                <au-tab title="Login">
+                <au-tab title="Login" [selected]="loginActive">
                     <form>
                         <div class="form-field">
                             <au-fa-input id="email-field" icon="envelope">
@@ -32,7 +32,7 @@
                         </div>
                     </form>
                 </au-tab>
-                <au-tab title="Sign Up">
+                <au-tab title="Sign Up" [selected]="!loginActive">
                     <form>
                         <div class="form-field">
                             <au-fa-input icon="envelope">
@@ -61,9 +61,9 @@
             <i  class="fa fa-times" (click)="modal.closeModal()"></i>
         </au-modal>
         <div class="modal-buttons">
-            <button #loginButton >Login</button>
+            <button #loginButton (click)="setLoginActive(true)">Login</button>
 
-            <button #signUpButton >Sign Up</button>
+            <button #signUpButton (click)="setLoginActive(false)">Sign Up</button>
         </div>
     </div>
 </body>
