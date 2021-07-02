@@ -12,6 +12,9 @@ export class AuModalComponent implements OnInit {
   @Input()
   body:TemplateRef<any>;
 
+  @Input()
+  inputTemplateData: any;
+
   constructor(private modalService: AuModalService,
     private eventManager: EventManager) { }
 
