@@ -57,11 +57,13 @@
        <!-- de sugared version for testing <ng-template [auModalOpenOnClick]="[loginButton,signUpButton]">
             <au-modal class="au-modal" [body]="authModelBody"></au-modal>
         </ng-template> -->
-        <au-modal *auModalOpenOnClick="[loginButton,signUpButton]" class="au-modal" [body]="authModelBody"></au-modal>
+        <au-modal #modal *auModalOpenOnClick="[loginButton,signUpButton]" class="au-modal" [body]="authModelBody">
+            <i  class="fa fa-times" (click)="modal.closeModal()"></i>
+        </au-modal>
         <div class="modal-buttons">
-            <button #loginButton (click)="setLoginActive(true)">Login</button>
+            <button #loginButton >Login</button>
 
-            <button #signUpButton (click)="setLoginActive(false)">Sign Up</button>
+            <button #signUpButton >Sign Up</button>
         </div>
     </div>
 </body>

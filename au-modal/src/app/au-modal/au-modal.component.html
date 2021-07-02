@@ -1,5 +1,8 @@
 <div class="modal-overlay" (click)="closeModal()">
   <div class="modal-body" (click)="cancelModal($event)">
+    <div class="iconContainer">
+      <ng-content select="i"></ng-content>
+    </div>    
     <ng-container *ngIf="body else projectContent">
       <ng-container *ngTemplateOutlet="body"></ng-container>
     </ng-container>

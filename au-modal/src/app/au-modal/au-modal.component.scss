@@ -30,5 +30,17 @@ $secondary: rgba(0, 0, 0, 0.117647);
   background: rgba(51,51,51,0.7);
   z-index: 10;
 }
+:host .iconContainer {
+  width: 100%;
+  height: 20px;
+  position: relative; 
+  
+  ::ng-deep i {
+    position: absolute;
+    right: 5px;    
+    height: 15px;
+    cursor: pointer;
+  }
+}
 
 
