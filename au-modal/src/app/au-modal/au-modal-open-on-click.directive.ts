@@ -30,11 +30,12 @@ export class AuModalOpenOnClickDirective implements OnDestroy{
       });
       
     }
-    clickHandler = () => {
+    clickHandler = (() => {
       console.log(this);
       this.viewContainer.clear();
       this.viewContainer.createEmbeddedView(this.templateRef);
-    }
+    }).bind(this);
+    
     ngOnDestroy() {
       this.elements.forEach(e1 => {
         e1.removeEventListener('click', this.clickHandler);

@@ -1,0 +1,10 @@
+go to a temp folder
+go to https://github.com/angular-university
+go to to repo angular-advanced-course
+
+git clone (note that if you want complete project then just clone .so it will get checked out from the master)
+    otherwise do below
+git checkout -b au-modal 
+
+create another folder 
+clone your git to that and copy above project to that
