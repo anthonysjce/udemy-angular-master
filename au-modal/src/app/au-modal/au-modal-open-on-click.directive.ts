@@ -30,7 +30,7 @@ export class AuModalOpenOnClickDirective implements OnDestroy{
       });
       
     }
-    clickHandler(){
+    clickHandler = () => {
       console.log(this);
       this.viewContainer.clear();
       this.viewContainer.createEmbeddedView(this.templateRef);
