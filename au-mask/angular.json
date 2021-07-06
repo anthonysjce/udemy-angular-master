@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "au-input": {
+    "au-mask": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -48,18 +48,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "au-input:build"
+            "browserTarget": "au-mask:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "au-input:build:production"
+              "browserTarget": "au-mask:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "au-input:build"
+            "browserTarget": "au-mask:build"
           }
         },
         "test": {
@@ -91,7 +91,7 @@
         }
       }
     },
-    "au-input-e2e": {
+    "au-mask-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -100,7 +100,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "au-input:serve"
+            "devServerTarget": "au-mask:serve"
           }
         },
         "lint": {
@@ -115,7 +115,7 @@
       }
     }
   },
-  "defaultProject": "au-input",
+  "defaultProject": "au-mask",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "",

@@ -1,6 +1,6 @@
 {
-  "name": "au-input",
-  "version": "8.0.2",
+  "name": "au-mask",
+  "version": "8.0.3",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -12,6 +12,9 @@
   },
   "private": false,
   "dependencies": {
+    "lodash.findindex": "^4.6.0",
+    "lodash.findlastindex": "^4.6.0",
+    "lodash.includes": "^4.3.0",
     "@angular/animations": "8.0.0",
     "@angular/common": "8.0.0",
     "@angular/compiler": "8.0.0",
