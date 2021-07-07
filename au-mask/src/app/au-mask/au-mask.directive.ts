@@ -52,7 +52,16 @@ export class AuMaskDirective implements OnInit {
 
         return;
       case RIGHT_ARROW:
-        const textAfterCursor = this.input.value.slice(cursorPos + 1);
+        this.handleRightArrow(cursorPos);
+
+        return;
+    }
+
+    overWriteCharAtPosition(this.input, cursorPos, key);
+    this.handleRightArrow(cursorPos);
+  }
+  handleRightArrow(cursorPos) {
+    const textAfterCursor = this.input.value.slice(cursorPos + 1);
         const rightCursorPos = findIndex(
           textAfterCursor,
           (char) => !includes(SPECIAL_CHARACTERS, char)
@@ -61,11 +70,6 @@ export class AuMaskDirective implements OnInit {
           const newRightcursorPos = cursorPos + rightCursorPos + 1;
           this.input.setSelectionRange(newRightcursorPos, newRightcursorPos);
         }
-
-        return;
-    }
-
-    overWriteCharAtPosition(this.input, cursorPos, key);
   }
 
   buildPlaceHolder() {
