@@ -40,16 +40,8 @@ export class AuMaskDirective implements OnInit {
       cursorPos = this.input.selectionStart;
     const currentValue = this.input.value;
     switch (keyCode) {
-      case LEFT_ARROW:
-        const textBeforeCursor = this.input.value.slice(0, cursorPos);
-        const leftcursorPos = findLastIndex(
-          textBeforeCursor,
-          (char) => !includes(SPECIAL_CHARACTERS, char)
-        );
-        if (leftcursorPos >= 0) {
-          this.input.setSelectionRange(leftcursorPos, leftcursorPos);
-        }
-
+      case LEFT_ARROW:       
+        this.handleLeftArrow(cursorPos);
         return;
       case RIGHT_ARROW:
         this.handleRightArrow(cursorPos);
@@ -70,6 +62,16 @@ export class AuMaskDirective implements OnInit {
           const newRightcursorPos = cursorPos + rightCursorPos + 1;
           this.input.setSelectionRange(newRightcursorPos, newRightcursorPos);
         }
+  }
+  handleLeftArrow(cursorPos) {
+    const textBeforeCursor = this.input.value.slice(0, cursorPos);
+    const leftcursorPos = findLastIndex(
+      textBeforeCursor,
+      (char) => !includes(SPECIAL_CHARACTERS, char)
+    );
+    if (leftcursorPos >= 0) {
+      this.input.setSelectionRange(leftcursorPos, leftcursorPos);
+    }
   }
 
   buildPlaceHolder() {
