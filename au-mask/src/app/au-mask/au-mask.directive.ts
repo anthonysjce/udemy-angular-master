@@ -15,6 +15,7 @@ import {
   SPECIAL_CHARACTERS,
   TAB,
 } from "./mask.utils";
+import { maskDigitValidator } from "./digit_validatior";
 
 @Directive({
   selector: "[au-mask]",
@@ -48,9 +49,11 @@ export class AuMaskDirective implements OnInit {
 
         return;
     }
-
-    overWriteCharAtPosition(this.input, cursorPos, key);
-    this.handleRightArrow(cursorPos);
+    const maskDigit = this.mask.charAt(cursorPos);
+    if(maskDigitValidator[maskDigit](key)) {
+      overWriteCharAtPosition(this.input, cursorPos, key);
+      this.handleRightArrow(cursorPos);
+    }    
   }
   handleRightArrow(cursorPos) {
     const textAfterCursor = this.input.value.slice(cursorPos + 1);
