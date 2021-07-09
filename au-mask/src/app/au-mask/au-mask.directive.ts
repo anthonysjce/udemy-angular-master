@@ -15,7 +15,7 @@ import {
   SPECIAL_CHARACTERS,
   TAB,
 } from "./mask.utils";
-import { maskDigitValidator } from "./digit_validatior";
+import { maskDigitValidator, neverValidator } from "./digit_validatior";
 
 @Directive({
   selector: "[au-mask]",
@@ -50,7 +50,11 @@ export class AuMaskDirective implements OnInit {
         return;
     }
     const maskDigit = this.mask.charAt(cursorPos);
-    if(maskDigitValidator[maskDigit](key)) {
+    const digitValidator = maskDigitValidator[maskDigit] || neverValidator;
+    // if maskDigitValidator[maskDigit] is null then it will return neverValidator which always return false
+    //this is the better approach than checking digitValidator(key) is not null like this !digitValidator(key)
+
+    if(digitValidator(key)) {
       overWriteCharAtPosition(this.input, cursorPos, key);
       this.handleRightArrow(cursorPos);
     }    

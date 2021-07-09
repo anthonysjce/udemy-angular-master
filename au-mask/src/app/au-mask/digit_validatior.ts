@@ -6,6 +6,7 @@ const upperCaseValidator:DigitValidator = (char) => /[A-Z]{1}/.test(char);
 const anyValidator:DigitValidator = (char) => true;
 const numberRangeValidator = (maxValue:Number,char:string) => numeriValidator(char) 
     && parseInt(char) <= maxValue; //number range validator is not a type of Digit validator since it has 2 parm
+export const neverValidator:DigitValidator = (char) => false;
 
 export const maskDigitValidator:{[key:string]:DigitValidator} = {    
     'a': loweCaseValidator,
