@@ -4,10 +4,13 @@
 
 
 <div class="container">
-    <ng-template #headerButtons>
+    <!-- <ng-template #headerButtons >
         <button (click)="tabpanel.selectTab(login)">Login</button>
         <button (click)="tabpanel.selectTab(signup)">Signup</button>
-    </ng-template>
+    </ng-template> -->
+    <ng-template #headerButtons let-tabs="tabs">
+        <button (click)="tabpanel.selectTab(tab)" *ngFor="let tab of tabs">{{tab.title}}</button>
+    </ng-template> 
     <au-tab-panel #tabpanel [headerTemplate]="headerButtons">
         <au-tab title="Login" #login>
             <form>
