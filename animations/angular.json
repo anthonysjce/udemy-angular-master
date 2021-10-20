@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "au-input": {
+    "animations": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -48,18 +48,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "au-input:build"
+            "browserTarget": "animations:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "au-input:build:production"
+              "browserTarget": "animations:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "au-input:build"
+            "browserTarget": "animations:build"
           }
         },
         "test": {
@@ -91,7 +91,7 @@
         }
       }
     },
-    "au-input-e2e": {
+    "animations-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -100,7 +100,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "au-input:serve"
+            "devServerTarget": "animations:serve"
           }
         },
         "lint": {
@@ -115,14 +115,14 @@
       }
     }
   },
-  "defaultProject": "au-input",
+  "defaultProject": "animations",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "",
+      "prefix": "app",
       "styleext": "css"
     },
     "@schematics/angular:directive": {
-      "prefix": ""
+      "prefix": "app"
     }
   }
 }
