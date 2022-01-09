@@ -2,10 +2,12 @@ import { Directive, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@ang
 import { AuModalService } from './modal.service';
 
 @Directive({
-  selector: '[auModalOpenOnClick]'
+  selector: '[auModalOpenOnClick]',
+  exportAs: 'auModalDirective'
 })
 export class AuModalOpenOnClickDirective implements OnDestroy{
   elements:HTMLBaseElement[];
+  
   constructor(private templateRef:TemplateRef<any>,
     private viewContainer: ViewContainerRef,
     private modalService: AuModalService) { 

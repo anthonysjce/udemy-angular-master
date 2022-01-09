@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import { AuModalOpenOnClickDirective } from './au-modal/au-modal-open-on-click.directive';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,15 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   loginActive = true;
+  
+  @ViewChild('modal',{static: false})
+  directive;
 
   setLoginActive(loginActive) {
     this.loginActive = loginActive;
   }
+  ngAfterViewInit(){   
+    console.log(this.directive); // this reference is AuModalOpenOnClickDirective
+  } 
 }
 
