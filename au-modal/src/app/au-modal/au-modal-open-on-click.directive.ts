@@ -32,11 +32,21 @@ export class AuModalOpenOnClickDirective implements OnDestroy{
       });
       
     }
-    clickHandler = (() => {
+    /* below function 'this' will this will point to button 
+    since . when we add listner function to an element 'this' will point
+    to the button. if below function is arrow function then this will point to the parent scope that is lexical scope
+    that is the directive itself and hence this.viewContainer will not throw errow
+    . so binding is not required if it is arrow function  */
+    /* clickHandler(e) {
       console.log(this);
       this.viewContainer.clear();
       this.viewContainer.createEmbeddedView(this.templateRef);
-    }).bind(this);
+    } */
+    clickHandler = ((e) => {
+      console.log(this);
+      this.viewContainer.clear();
+      this.viewContainer.createEmbeddedView(this.templateRef);
+    })
     
     ngOnDestroy() {
       this.elements.forEach(e1 => {
