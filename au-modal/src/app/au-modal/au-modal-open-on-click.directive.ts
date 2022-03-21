@@ -46,7 +46,7 @@ export class AuModalOpenOnClickDirective implements OnDestroy{
       console.log(this);
       this.viewContainer.clear();
       this.viewContainer.createEmbeddedView(this.templateRef);
-    })
+    })//.bind(this);
     
     ngOnDestroy() {
       this.elements.forEach(e1 => {
